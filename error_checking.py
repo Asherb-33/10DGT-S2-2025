@@ -1,0 +1,122 @@
+#22/10/25
+#Author:Asher Brown
+#Error checking
+#Version 1.0
+
+#Code that tests whether a valid input is given
+'''done = False 
+while not done:
+    num =int(input("Please enter your value: "))
+    done = True
+
+print(f"The number that you entered is {num}")'''
+
+#Code that testts whether a valid input is given(v1.1)
+#Use the try and except method to catch errors
+'''done = False
+while not done:
+    try: #This method tries for a valid input
+        num =float(input("Please enter a float number: "))
+        done = True
+
+    except ValueError:
+        print("That is not valid float number. \n")
+
+print(f"The number that you entered is {num}")'''
+
+#Code that tests whether a valid input is given (v1.2)
+#Create a function call every time I ask the user for a number. 
+# A function is a chunk of code that does something when called.
+#Functions can be used over and over again
+#To use a function (call it), write out its name with
+#paranthesis () at the end.
+#To crate a function, start with the word 'def'
+'''def test_int_num():
+    done =False
+    while not done:
+        try:
+            num = int(input("Please enter a number (integer)"))
+            done =True
+        
+        except ValueError:
+            print("That is not a valid float number. \n")
+    print(f"The number that you entered is {num}")
+
+test_int_num()'''
+
+#Code that tests whether a valid input is given (v1.3)
+#Use the function parameters to make my code
+#more pythonic
+
+'''def test_int(question): #'question' is a place holder 
+    done = False
+    while not done:
+        error ="That is not a valid number"
+        print(question)
+        try:
+            num=int(input())
+            done = True
+
+        except ValueError:
+            print(error)
+
+    return(num) #gives back the value of num so that I can use it outside of the function.
+#Main routine
+num1 = test_int("Please enter your first number:")
+print(f"Your first number entered is{num1}")
+
+num2 = test_int("Please enter your second number: ")
+print(f"The second number you entered is {num2}")
+
+sum = num1 +num2
+print(f"Your numbers added together equal to{sum}")'''
+
+#Code that tests whether a valid input is given (v1.4)
+#Use more pythonic parameters to make my code
+# more pythonic
+
+def valid_num(question, low, high):
+    error =f"Whoops, that is not an interger between {low} and {high}"
+    while True:
+        Try:
+        response = int(input(question))
+                #If the response >= 0 and response <=10
+        if low<= response <= high:
+                    break # this stops the loop
+
+        else:
+                    print(f"{error}")
+                        
+        exceptValueError:
+        print(error)
+        return response
+
+#Main Routine
+if __name__=="__main__":
+    num_1 = valid_num("Enter a number between 1 and 10 ",1,10)
+    print(f"You entered {num_1}\n")
+
+    num_2 = valid_num("Enter a number between 15 and 25 ",15,25)
+    print(f"You entered {num_2}\n")
+
+    num_3 = valid_num("Enter a number between 70 and 90 ",70,90)
+    print(f"You entered {num_3}\n")
+
+    #multiplying
+    multiply = num_1*num_2*num_3
+    print(f"Your three numbers multiplied together are equal to {multiply} \n")
+    #adding numbers
+    sum = num_1+num_2+num_3
+    print(f" The total of {num_1}, {num_2} and {num_3} is {sum}")
+
+                  
+    
+        
+
+                
+                
+
+            
+        
+    
+        
